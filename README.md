@@ -1,6 +1,6 @@
 ## Studying for a Tech Interview Sucks, so Here's a Cheat Sheet to Help
 
-This list is meant to be a both a quick guide and reference for further research into these topics.  It's basically a summary of that comp sci course you never took or forgot about, so there's no way it can cover everything in depth.  It also will be available as a [gist](https://gist.github.com/TSiege/cbb0507082bb18ff7e4b) on Github for everyone to edit and add to.
+This list is meant to be both a quick guide and reference for further research into these topics.  It's basically a summary of that comp sci course you never took or forgot about, so there's no way it can cover everything in depth.  It also will be available as a [gist](https://gist.github.com/TSiege/cbb0507082bb18ff7e4b) on Github for everyone to edit and add to.
 
 ## Data Structure Basics
 
@@ -15,10 +15,10 @@ This list is meant to be a both a quick guide and reference for further research
 - **Linear arrays**, or one dimensional arrays, are the most basic.
   - Are static in size, meaning that they are declared with a fixed size.
 - **Dynamic arrays** are like one dimensional arrays, but have reserved space for additional elements.
-  - If a dynamic array is full, it copies it's contents to a larger array.
-- **Two dimensional arrays** have x and y indices like a grid or nested arrays.
+  - If a dynamic array is full, it copies its contents to a larger array.
+- **Multi dimensional arrays** nested arrays that allow for multiple dimensions such as an array of arrays providing a 2 dimensional spacial representation via x, y coordinates.
 
-#### Big O efficiency:
+#### Time Complexity:
 - Indexing:         Linear array: O(1),      Dynamic array: O(1)
 - Search:           Linear array: O(n),      Dynamic array: O(n)
 - Optimized Search: Linear array: O(log n), Dynamic array: O(log n)
@@ -33,7 +33,7 @@ This list is meant to be a both a quick guide and reference for further research
 
 #### What you need to know:
 - Designed to optimize insertion and deletion, slow at indexing and searching.
-- **Doubly linked list** has nodes that reference the previous node.
+- **Doubly linked list** has nodes that also reference the previous node.
 - **Circularly linked list** is simple linked list whose **tail**, the last node, references the **head**, the first node.
 - **Stack**, commonly implemented with linked lists but can be made from arrays too.
   - Stacks are **last in, first out** (LIFO) data structures.
@@ -42,7 +42,7 @@ This list is meant to be a both a quick guide and reference for further research
   - Queues are a **first in, first out** (FIFO) data structure.
   - Made with a doubly linked list that only removes from head and adds to tail.
 
-#### Big O efficiency:
+#### Time Complexity:
 - Indexing:         Linked Lists: O(n)
 - Search:           Linked Lists: O(n)
 - Optimized Search: Linked Lists: O(n)
@@ -63,7 +63,7 @@ This list is meant to be a both a quick guide and reference for further research
   - This is often accommodated for by having the hash tables be very large.
 - Hashes are important for associative arrays and database indexing.
 
-#### Big O efficiency:
+#### Time Complexity:
 - Indexing:         Hash Tables: O(1)
 - Search:           Hash Tables: O(1)
 - Insertion:        Hash Tables: O(1)
@@ -85,7 +85,7 @@ This list is meant to be a both a quick guide and reference for further research
   - There can be no duplicate node.
   - Because of the above it is more likely to be used as a data structure than a binary tree.
 
-#### Big O efficiency:
+#### Time Complexity:
 - Indexing:  Binary Search Tree: O(log n)
 - Search:    Binary Search Tree: O(log n)
 - Insertion: Binary Search Tree: O(log n)
@@ -106,8 +106,8 @@ This list is meant to be a both a quick guide and reference for further research
   - Because it uses a queue it is more memory intensive than **depth first search**.
   - The queue uses more memory because it needs to stores pointers
 
-#### Big O efficiency:
-- Search: Breadth First Search: O(|E| + |V|)
+#### Time Complexity:
+- Search: Breadth First Search: O(V + E)
 - E is number of edges
 - V is number of vertices
 
@@ -125,7 +125,7 @@ This list is meant to be a both a quick guide and reference for further research
   - Because a stack is LIFO it does not need to keep track of the nodes pointers and is therefore less memory intensive than breadth first search.
   - Once it cannot go further left it begins evaluating the stack.
 
-#### Big O efficiency:
+#### Time Complexity:
 - Search: Depth First Search: O(|E| + |V|)
 - E is number of edges
 - V is number of vertices
@@ -137,7 +137,7 @@ This list is meant to be a both a quick guide and reference for further research
   - For deep, narrow trees use Depth First Search
 
 #### Nuances:
-  - Because BFS uses queues to store information about the nodes and its children, it could use more memory than is available on your computer.  (But you probably won't have to worry about this.)
+  - Because BFS uses queues to store information about the nodes and its children, it could use more memory than is available on your computer. (But you probably won't have to worry about this.)
   - If using a DFS on a tree that is very deep you might go unnecessarily deep in the search. See [xkcd](http://xkcd.com/761/) for more information.
   - Breadth First Search tends to be a looping algorithm.
   - Depth First Search tends to be a recursive algorithm.
@@ -156,7 +156,7 @@ This list is meant to be a both a quick guide and reference for further research
 - This is one of the most basic sorting algorithms.
 - Know that it divides all the data into as small possible sets then compares them.
 
-#### Big O efficiency:
+#### Time Complexity:
 - Best Case Sort: Merge Sort: O(n)
 - Average Case Sort: Merge Sort: O(n log n)
 - Worst Case Sort: Merge Sort: O(n log n)
@@ -164,7 +164,7 @@ This list is meant to be a both a quick guide and reference for further research
 ### **Quicksort**
 #### Definition:
 - A comparison based sorting algorithm
-  - Divides entire dataset in half by selecting the average element and putting all smaller elements to the left of the average.
+  - Divides entire dataset in half by selecting the middle element and putting all smaller elements to the left of the element and larger ones to the right.
   - It repeats this process on the left side until it is comparing only two elements at which point the left side is sorted.
   - When the left side is finished sorting it performs the same operation on the right side.
 - Computer architecture favors the quicksort process.
@@ -173,7 +173,7 @@ This list is meant to be a both a quick guide and reference for further research
 - While it has the same Big O as (or worse in some cases) many other sorting algorithms it is often faster in practice than many other sorting algorithms, such as merge sort.
 - Know that it halves the data set by the average continuously until all the information is sorted.
 
-#### Big O efficiency:
+#### Time Complexity:
 - Best Case Sort: Merge Sort: O(n)
 - Average Case Sort: Merge Sort: O(n log n)
 - Worst Case Sort: Merge Sort: O(n^2)
@@ -182,13 +182,13 @@ This list is meant to be a both a quick guide and reference for further research
 #### Definition:
 - A comparison based sorting algorithm
   - It iterates left to right comparing every couplet, moving the smaller element to the left.
-  - It repeats this process until it no longer moves and element to the left.
+  - It repeats this process until it no longer moves an element to the left.
 
 #### What you need to know:
 - While it is very simple to implement, it is the least efficient of these three sorting methods.
 - Know that it moves one space to the right comparing two elements at a time and moving the smaller on to left.
 
-#### Big O efficiency:
+#### Time Complexity:
 - Best Case Sort: Merge Sort: O(n)
 - Average Case Sort: Merge Sort: O(n^2)
 - Worst Case Sort: Merge Sort: O(n^2)
@@ -208,7 +208,7 @@ This list is meant to be a both a quick guide and reference for further research
 #### What you need to know:
 - **Stack level too deep** and **stack overflow**.
   - If you've seen either of these from a recursive algorithm, you messed up.
-  - It means that your base case was never triggered because it was faulty or the problem was so massive you ran out of RAM before reaching it.
+  - It means that your base case was never triggered because it was faulty or the problem was so massive you ran out of alloted memory.
   - Knowing whether or not you will reach a base case is integral to correctly using recursion.
   - Often used in Depth First Search
 
@@ -245,7 +245,7 @@ recursive method (array, n)       | iterative method (array)
 ### **Greedy Algorithm**
 #### Definition:
 - An algorithm that, while executing, selects only the information that meets a certain criteria.
-- The general five components, taken from [Wikipedia](http://en.wikipedia.org/wiki/Greedy_algorithm# Specifics):
+- The general five components, taken from [Wikipedia](http://en.wikipedia.org/wiki/Greedy_algorithm#Specifics):
   - A candidate set, from which a solution is created.
   - A selection function, which chooses the best candidate to be added to the solution.
   - A feasibility function, that is used to determine if a candidate can be used to contribute to a solution.
@@ -253,7 +253,7 @@ recursive method (array, n)       | iterative method (array)
   - A solution function, which will indicate when we have discovered a complete solution.
 
 #### What you need to know:
-- Used to find the optimal solution for a given problem.
+- Used to find the expedient, though non-optimal, solution for a given problem.
 - Generally used on sets of data where only a small proportion of the information evaluated meets the desired result.
 - Often a greedy algorithm can help reduce the Big O of an algorithm.
 
