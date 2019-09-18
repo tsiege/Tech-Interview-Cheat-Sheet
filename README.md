@@ -177,9 +177,9 @@ This is an open source, community project, and I am grateful for all the help I 
 - Know that it halves the data set by the average continuously until all the information is sorted.
 
 #### Time Complexity:
-- Best Case Sort: Merge Sort: O(n)
-- Average Case Sort: Merge Sort: O(n log n)
-- Worst Case Sort: Merge Sort: O(n^2)
+- Best Case Sort: Quick Sort: O(n)
+- Average Case Sort: Quick Sort: O(n log n)
+- Worst Case Sort: Quick Sort: O(n^2)
 
 ### **Bubble Sort**
 #### Definition:
@@ -192,9 +192,9 @@ This is an open source, community project, and I am grateful for all the help I 
 - Know that it moves one space to the right comparing two elements at a time and moving the smaller on to left.
 
 #### Time Complexity:
-- Best Case Sort: Merge Sort: O(n)
-- Average Case Sort: Merge Sort: O(n^2)
-- Worst Case Sort: Merge Sort: O(n^2)
+- Best Case Sort: Bubble Sort: O(n)
+- Average Case Sort: Bubble Sort: O(n^2)
+- Worst Case Sort: Bubble Sort: O(n^2)
 
 #### Merge Sort Vs. Quicksort
 - Quicksort is likely faster in practice.
