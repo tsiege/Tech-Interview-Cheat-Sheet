@@ -211,7 +211,7 @@ This is an open source, community project, and I am grateful for all the help I 
 #### What you need to know:
 - **Stack level too deep** and **stack overflow**.
   - If you've seen either of these from a recursive algorithm, you messed up.
-  - It means that your base case was never triggered because it was faulty or the problem was so massive you ran out of alloted memory.
+  - It means that your base case was never triggered because it was faulty or the problem was so massive you ran out of allocated memory.
   - Knowing whether or not you will reach a base case is integral to correctly using recursion.
   - Often used in Depth First Search
 
