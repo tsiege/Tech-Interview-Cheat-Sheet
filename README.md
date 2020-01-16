@@ -5,13 +5,25 @@ This list is meant to be both a quick guide and reference for further research i
 ## Contributing
 This is an open source, community project, and I am grateful for all the help I can get. If you find a mistake make a PR and please have a source so I can confirm the correction. If you have any suggestions feel free to open an issue.
 
-## Contents
+# Contents
 - [Asymptotic Notation](#asymptotic-notation)
 - [Data Structures](#data-structures)
+  - [Array](#array)
+  - [Linked List](#linked-list)
+  - [Hash Table or Hash Map](#hash)
+  - [Binary Tree](#binary-tree)
+- [Algorithms](#algorithms)
+  - [Algorithm Basics](#algorithm-basics)
+  - [Search Algorithms](#search-algorithms)
+    - [Breadth First Search](#breadth-first-search)
+    - [Depth First Search](#depth-first-search)
+  - [Sorting Algorithms](#sorting-algorithms)
+    - [Merge Sort](#merge-sort)
+    - [Quick Sort](#quick-sort)
 - [Additional Resources](#additional-resources)
 
 
-## <a id="asymptotic-notation"></a>Asymptotic Notation
+# <a id="asymptotic-notation"></a>Asymptotic Notation
 ### Definition:
 Asymptotic Notation is the hardware independent notation used to tell the time and space complexity of an algorithm. Meaning it's a standardized way of measuring how much memory an algorithm uses or how long it runs for given an input.
 
@@ -28,7 +40,7 @@ small values of `n`
 
 [(source: Soumyadeep Debnath, _Analysis of Algorithms | Big-O analysis_)](https://www.geeksforgeeks.org/analysis-algorithms-big-o-analysis/)
 
-Visualized below:
+Visualized below; the x-axis representing input size and the y-axis representing complexity:
 
 ![#](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Comparison_computational_complexity.svg/400px-Comparison_computational_complexity.svg.png)
 
@@ -46,11 +58,10 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - Big-O does _not_ mean Worst Case Scenario, Big-Theta does _not_ mean average case, and Big-Omega does _not_ mean Best Case Scenario. They only connote the algorithm's performance for a particular scenario, and all three can be used for any scenario.
 - Worst Case means given an unideal input, Average Case means given a typical input, Best case means a ideal input. Ex. Worst case means given an input the algorithm performs particularly bad, or best case an already sorted array for a sorting algorithm.
 - Best Case and Big Omega are generally not helpful since Best Cases are rare in the real world and lower bound might be very different than an upper bound.
-- Big-O isn't everything. On paper merge sort is faster than quick sort, but in practice quick sort.
+- Big-O isn't everything. On paper merge sort is faster than quick sort, but in practice quick sort is superior.
 
-## <a id="data-structures"></a>Data Structures
-
-### **Array**
+# <a id="data-structures"></a>Data Structures
+### <a id="array"></a> Array
 #### Definition
 - Stores data elements based on an sequential, most commonly 0 based, index.
 - Based on [tuples](http://en.wikipedia.org/wiki/Tuple) from set theory.
@@ -71,7 +82,7 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - Insertion:        Linear array: n/a,         Dynamic array: `O(n)`
 
 
-### **Linked List**
+### <a id="linked-list"></a> Linked List
 #### Definition
 - Stores data with **nodes** that point to other nodes.
   - Nodes, at its most basic it has one datum and one reference (another node).
@@ -95,7 +106,7 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - Insertion:        Linked Lists: `O(1)`
 
 
-### **Hash Table or Hash Map**
+### <a id="hash"></a> Hash Table or Hash Map
 #### Definition
 - Stores data with key value pairs.
 - **Hash functions** accept a key and return an output unique only to that specific key.
@@ -115,7 +126,7 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - Insertion:        Hash Tables: `O(1)`
 
 
-### **Binary Tree**
+### <a id="binary-tree"></a> Binary Tree
 #### Definition
 - Is a tree like data structure where every node has at most two children.
   - There is one left and right child node.
@@ -137,9 +148,9 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - Insertion: Binary Search Tree: `O(log n)`
 
 
-## Algorithms
-## Basic Types of Algorithms
-### **Recursive Algorithms**
+# <a id="algorithms"></a> Algorithms
+## <a id="algorithm-basics"></a> Algorithm Basics
+### Recursive Algorithms
 #### Definition
 - An algorithm that calls itself in its definition.
   - **Recursive case** a conditional statement that is used to trigger the recursion.
@@ -153,7 +164,7 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
   - Often used in Depth First Search
 
 
-### **Iterative Algorithms**
+### Iterative Algorithms
 #### Definition
 - An algorithm that is called repeatedly but for a finite number of times, each time being a single iteration.
   - Often used to move incrementally through a data set.
@@ -171,7 +182,35 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - **Imperative languages** tend to use iteration. (i.e. Ruby)
 - Check out this [Stack Overflow post](http://stackoverflow.com/questions/19794739/what-is-the-difference-between-iteration-and-recursion) for more info.
 
-### **Breadth First Search**
+### Greedy Algorithms
+#### Definition
+- An algorithm that, while executing, selects only the information that meets a certain criteria.
+- The general five components, taken from [Wikipedia](http://en.wikipedia.org/wiki/Greedy_algorithm#Specifics):
+  - A candidate set, from which a solution is created.
+  - A selection function, which chooses the best candidate to be added to the solution.
+  - A feasibility function, that is used to determine if a candidate can be used to contribute to a solution.
+  - An objective function, which assigns a value to a solution, or a partial solution.
+  - A solution function, which will indicate when we have discovered a complete solution.
+
+#### What you need to know
+- Used to find the expedient, though non-optimal, solution for a given problem.
+- Generally used on sets of data where only a small proportion of the information evaluated meets the desired result.
+- Often a greedy algorithm can help reduce the Big O of an algorithm.
+
+#### Pseudo Code of a Greedy Algorithm to Find Largest Difference of any Two Numbers in an Array.
+```
+greedy algorithm (array)
+  var largest difference = 0
+  var new difference = find next difference (array[n], array[n+1])
+  largest difference = new difference if new difference is > largest difference
+  repeat above two steps until all differences have been found
+  return largest difference
+```
+
+This algorithm never needed to compare all the differences to one another, saving it an entire iteration.
+
+## <a id="search-algorithms"></a>Search Algorithms
+### <a id="breadth-first-search"></a>Breadth First Search
 #### Definition
 - An algorithm that searches a tree (or graph) by searching levels of the tree first, starting at the root.
   - It finds every node on the same level, most often moving left to right.
@@ -190,7 +229,7 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - E is number of edges
 - V is number of vertices
 
-### **Depth First Search**
+### <a id="depth-first-search"></a>Depth First Search
 #### Definition
 - An algorithm that searches a tree (or graph) by searching depth of the tree first, starting at the root.
   - It traverses left down a tree until it cannot go further.
@@ -222,7 +261,8 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
   - Depth First Search tends to be a recursive algorithm.
 
 
-### **Merge Sort**
+## <a id="sorting-algorithms"></a>Sorting Algorithms
+### <a id="merge-sort"></a>Merge Sort
 #### Definition
 - A comparison based sorting algorithm
   - Divides entire dataset into groups of at most two.
@@ -239,7 +279,7 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - Average Case Sort: Merge Sort: `O(n log n)`
 - Worst Case Sort: Merge Sort: `O(n log n)`
 
-### **Quicksort**
+### <a id="quick-sort"></a>Quicksort
 #### Definition
 - A comparison based sorting algorithm
   - Divides entire dataset in half by selecting the middle element and putting all smaller elements to the left of the element and larger ones to the right.
@@ -254,22 +294,22 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 #### Time Complexity
 - Best Case Sort: Merge Sort: `O(n)`
 - Average Case Sort: Merge Sort: `O(n log n)`
-- Worst Case Sort: Merge Sort: O(n^2)
+- Worst Case Sort: Merge Sort: `O(n^2)`
 
-### **Bubble Sort**
+### <a id="bubble-sort"></a>Bubble Sort
 #### Definition
 - A comparison based sorting algorithm
   - It iterates left to right comparing every couplet, moving the smaller element to the left.
   - It repeats this process until it no longer moves an element to the left.
 
 #### What you need to know
-- While it is very simple to implement, it is the least efficient of these three sorting methods.
+- While it is very simple to implement, it is the least efficient of these three sorting methods. It's even considered just a bad algorithm.
 - Know that it moves one space to the right comparing two elements at a time and moving the smaller on to left.
 
 #### Time Complexity
 - Best Case Sort: Merge Sort: `O(n)`
-- Average Case Sort: Merge Sort: O(n^2)
-- Worst Case Sort: Merge Sort: O(n^2)
+- Average Case Sort: Merge Sort: `O(n^2)`
+- Worst Case Sort: Merge Sort: `O(n^2)`
 
 #### Merge Sort Vs. Quicksort
 - Quicksort is likely faster in practice.
@@ -287,29 +327,3 @@ recursive method (array, n)       | iterative method (array)
   else                            |
     exit loop                     |
 ```
-### **Greedy Algorithm**
-#### Definition
-- An algorithm that, while executing, selects only the information that meets a certain criteria.
-- The general five components, taken from [Wikipedia](http://en.wikipedia.org/wiki/Greedy_algorithm#Specifics):
-  - A candidate set, from which a solution is created.
-  - A selection function, which chooses the best candidate to be added to the solution.
-  - A feasibility function, that is used to determine if a candidate can be used to contribute to a solution.
-  - An objective function, which assigns a value to a solution, or a partial solution.
-  - A solution function, which will indicate when we have discovered a complete solution.
-
-#### What you need to know
-- Used to find the expedient, though non-optimal, solution for a given problem.
-- Generally used on sets of data where only a small proportion of the information evaluated meets the desired result.
-- Often a greedy algorithm can help reduce the Big O of an algorithm.
-
-#### Pseudo Code of a Greedy Algorithm to Find Largest Difference of any Two Numbers in an Array.
-```
-greedy algorithm (array)
-  var largest difference = 0
-  var new difference = find next difference (array[n], array[n+1])
-  largest difference = new difference if new difference is > largest difference
-  repeat above two steps until all differences have been found
-  return largest difference
-```
-
-This algorithm never needed to compare all the differences to one another, saving it an entire iteration.
