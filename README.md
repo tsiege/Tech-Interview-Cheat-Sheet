@@ -5,7 +5,7 @@ This list is meant to be both a quick guide and reference for further research i
 ## Contributing
 This is an open source, community project, and I am grateful for all the help I can get. If you find a mistake make a PR and please have a source so I can confirm the correction. If you have any suggestions feel free to open an issue.
 
-# Contents
+# Table of Content
 - [Asymptotic Notation](#asymptotic-notation)
 - [Data Structures](#data-structures)
   - [Array](#array)
@@ -18,6 +18,8 @@ This is an open source, community project, and I am grateful for all the help I 
     - [Breadth First Search](#breadth-first-search)
     - [Depth First Search](#depth-first-search)
   - [Sorting Algorithms](#sorting-algorithms)
+    - [Insertion Sort](#insertion-sort)
+    - [Selection Sort](#selection-sort)
     - [Merge Sort](#merge-sort)
     - [Quick Sort](#quick-sort)
 - [Additional Resources](#additional-resources)
@@ -32,7 +34,7 @@ The following are the Asymptotic rates of growth from best to worst:
 - constant growth - ``O(1)`` Runtime is constant and does not grow with `n`
 - logarithmic growth – ``O(log n)`` Runtime grows logarithmically in proportion to `n`
 - linear growth – ``O(n)`` Runtime grows directly in proportion to `n`
-- superlinear growth – ``O(n log n)`` Runtime grows in proportion _and_ logarithmically to `n`
+- logarithmic growth – ``O(n log n)`` Runtime grows in proportion _and_ logarithmically to `n`
 - polynomial growth – `O(n^c)` Runtime grows quicker than previous all based on `n`
 - exponential growth – `O(c^n)` Runtime grows even faster than polynomial growth based on `n`
 - factorial growth – `O(n!)` Runtime grows the fastest and becomes quickly unusable for even
@@ -182,6 +184,18 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - **Imperative languages** tend to use iteration. (i.e. Ruby)
 - Check out this [Stack Overflow post](http://stackoverflow.com/questions/19794739/what-is-the-difference-between-iteration-and-recursion) for more info.
 
+#### Pseudo Code of Moving Through an Array
+```
+Recursion                         | Iteration
+----------------------------------|----------------------------------
+recursive method (array, n)       | iterative method (array)
+  if array[n] is not nil          |   for n from 0 to size of array
+    print array[n]                |     print(array[n])
+    recursive method(array, n+1)  |
+  else                            |
+    exit loop                     |
+```
+
 ### Greedy Algorithms
 #### Definition
 - An algorithm that, while executing, selects only the information that meets a certain criteria.
@@ -262,68 +276,112 @@ This algorithm never needed to compare all the differences to one another, savin
 
 
 ## <a id="sorting-algorithms"></a>Sorting Algorithms
-### <a id="merge-sort"></a>Merge Sort
+
+### <a id="selection-sort"></a>Selection Sort
 #### Definition
-- A comparison based sorting algorithm
-  - Divides entire dataset into groups of at most two.
-  - Compares each number one at a time, moving the smallest number to left of the pair.
-  - Once all pairs sorted it then compares left most elements of the two leftmost pairs creating a sorted group of four with the smallest numbers on the left and the largest ones on the right.
-  - This process is repeated until there is only one set.
+- A comparison based sorting algorithm.
+  - Starts with the cursor on the left, iterating left to right
+  - Compares the left side to the right, looking for the smallest known item
+    - If the left is smaller than the item to the right it continues iterating
+    - If the left is bigger than the item to the right, the item on the right becomes the known smallest number
+    - Once it has checked all items, it moves the known smallest to the cursor and advances the cursor to the right and starts over
+  - As the algorithm processes the data set, it builds a fully sorted left side of the data until the entire data set is sorted
+- Changes the array in place.
 
 #### What you need to know
-- This is one of the most basic sorting algorithms.
-- Know that it divides all the data into as small possible sets then compares them.
+- Inefficient for large data sets.
+- Very simple to implement.
 
 #### Time Complexity
-- Best Case Sort: Merge Sort: `O(n)`
-- Average Case Sort: Merge Sort: `O(n log n)`
-- Worst Case Sort: Merge Sort: `O(n log n)`
-
-### <a id="quick-sort"></a>Quicksort
-#### Definition
-- A comparison based sorting algorithm
-  - Divides entire dataset in half by selecting the middle element and putting all smaller elements to the left of the element and larger ones to the right.
-  - It repeats this process on the left side until it is comparing only two elements at which point the left side is sorted.
-  - When the left side is finished sorting it performs the same operation on the right side.
-- Computer architecture favors the quicksort process.
-
-#### What you need to know
-- While it has the same Big O as (or worse in some cases) many other sorting algorithms it is often faster in practice than many other sorting algorithms, such as merge sort.
-- Know that it halves the data set by the average continuously until all the information is sorted.
-
-#### Time Complexity
-- Best Case Sort: Merge Sort: `O(n)`
-- Average Case Sort: Merge Sort: `O(n log n)`
+- Best Case Sort: Merge Sort: `O(n^2)`
+- Average Case Sort: Merge Sort: `O(n^2)`
 - Worst Case Sort: Merge Sort: `O(n^2)`
 
-### <a id="bubble-sort"></a>Bubble Sort
+#### Space Complexity
+- Worst Case: `O(1)`
+
+#### Visualization
+![#](https://upload.wikimedia.org/wikipedia/commons/9/94/Selection-Sort-Animation.gif)
+
+[(source: Wikipedia, _Insertion Sort_)](https://en.wikipedia.org/wiki/Selection_sort)
+
+### <a id="insertion-sort"></a>Insertion Sort
 #### Definition
-- A comparison based sorting algorithm
-  - It iterates left to right comparing every couplet, moving the smaller element to the left.
-  - It repeats this process until it no longer moves an element to the left.
+- A comparison based sorting algorithm.
+  - Iterates left to right comparing the current cursor to the previous item.
+  - If the cursor is smaller than the item on the left it swaps positions and the cursor compares itself again to the left hand side until it is put in its sorted position.
+  - As the algorithm processes the data set, the left side becomes increasingly sorted until it is fully sorted.
+- Changes the array in place.
 
 #### What you need to know
-- While it is very simple to implement, it is the least efficient of these three sorting methods. It's even considered just a bad algorithm.
-- Know that it moves one space to the right comparing two elements at a time and moving the smaller on to left.
+- Inefficient for large data sets, but can be faster for than other algorithms for small ones.
+- Although it has an `O(n^2)`, in practice it slightly less since its comparison scheme only requires checking place if its smaller than its neighbor.
 
 #### Time Complexity
 - Best Case Sort: Merge Sort: `O(n)`
 - Average Case Sort: Merge Sort: `O(n^2)`
 - Worst Case Sort: Merge Sort: `O(n^2)`
 
+#### Space Complexity
+- Worst Case: `O(n)`
+
+#### Visualization
+![#](https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif)
+
+[(source: Wikipedia, _Insertion Sort_)](https://en.wikipedia.org/wiki/Insertion_sort)
+
+### <a id="merge-sort"></a>Merge Sort
+#### Definition
+- A divide and conquer algorithm.
+  - Recursively divides entire array by half into subsets until the subset is one, the base case.
+  - Once the base case is reached results are returned and sorted ascending left to right.
+  - Recursive calls are returned and the sorts double in size until the entire array is sorted.
+
+#### What you need to know
+- This is one of the fundamental sorting algorithms.
+- Know that it divides all the data into as small possible sets then compares them.
+
+#### Time Complexity
+- Worst Case: `O(n log n)`
+- Average Case: `O(n log n)`
+- Best Case: `O(n)`
+
+#### Space Complexity
+- Worst Case: `O(1)`
+
+#### Visualization
+![#](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Merge_sort_algorithm_diagram.svg/400px-Merge_sort_algorithm_diagram.svg.png)
+
+[(source: Wikipedia, _Merge Sort_)](https://en.wikipedia.org/wiki/Merge_sort)
+
+### <a id="quick-sort"></a>Quicksort
+#### Definition
+- A divide and conquer algorithm
+  - Partitions entire data set in half by selecting a random pivot element and putting all smaller elements to the left of the element and larger ones to the right.
+  - It repeats this process on the left side until it is comparing only two elements at which point the left side is sorted.
+  - When the left side is finished sorting it performs the same operation on the right side.
+- Computer architecture favors the quicksort process.
+- Changes the array in place.
+
+#### What you need to know
+- While it has the same Big O as (or worse in some cases) many other sorting algorithms it is often faster in practice than many other sorting algorithms, such as merge sort.
+
+#### Time Complexity
+- Worst Case: `O(n^2)`
+- Average Case: `O(n log n)`
+- Best Case: `O(n log n)`
+
+#### Space Complexity
+- Worst Case: `O(log n)`
+
+#### Visualization
+![#](https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif)
+
+[(source: Wikipedia, _Quicksort_)](https://en.wikipedia.org/wiki/Quicksort)
+
 #### Merge Sort Vs. Quicksort
 - Quicksort is likely faster in practice.
 - Merge Sort divides the set into the smallest possible groups immediately then reconstructs the incrementally as it sorts the groupings.
 - Quicksort continually divides the set by the average, until the set is recursively sorted.
 
-#### Pseudo Code of Moving Through an Array (this is why iteration is used for this)
-```
-Recursion                         | Iteration
-----------------------------------|----------------------------------
-recursive method (array, n)       | iterative method (array)
-  if array[n] is not nil          |   for n from 0 to size of array
-    print array[n]                |     print(array[n])
-    recursive method(array, n+1)  |
-  else                            |
-    exit loop                     |
-```
+## <a id="additional-resources"></a>Additional Resources
