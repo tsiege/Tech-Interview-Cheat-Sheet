@@ -18,8 +18,8 @@ This is an open source, community project, and I am grateful for all the help I 
     - [Breadth First Search](#breadth-first-search)
     - [Depth First Search](#depth-first-search)
   - [Sorting Algorithms](#sorting-algorithms)
-    - [Insertion Sort](#insertion-sort)
     - [Selection Sort](#selection-sort)
+    - [Insertion Sort](#insertion-sort)
     - [Merge Sort](#merge-sort)
     - [Quick Sort](#quick-sort)
 - [Additional Resources](#additional-resources)
@@ -380,8 +380,8 @@ This algorithm never needed to compare all the differences to one another, savin
 [(source: Wikipedia, _Quicksort_)](https://en.wikipedia.org/wiki/Quicksort)
 
 #### Merge Sort Vs. Quicksort
-- Quicksort is likely faster in practice.
+- Quicksort is likely faster in practice, but merge sort is faster on paper.
 - Merge Sort divides the set into the smallest possible groups immediately then reconstructs the incrementally as it sorts the groupings.
-- Quicksort continually divides the set by the average, until the set is recursively sorted.
+- Quicksort continually partitions the data set by a pivot, until the set is recursively sorted.
 
 ## <a id="additional-resources"></a>Additional Resources
