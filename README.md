@@ -34,7 +34,7 @@ The following are the Asymptotic rates of growth from best to worst:
 - constant growth - ``O(1)`` Runtime is constant and does not grow with `n`
 - logarithmic growth – ``O(log n)`` Runtime grows logarithmically in proportion to `n`
 - linear growth – ``O(n)`` Runtime grows directly in proportion to `n`
-- logarithmic growth – ``O(n log n)`` Runtime grows in proportion _and_ logarithmically to `n`
+- superlinear growth – ``O(n log n)`` Runtime grows in proportion _and_ logarithmically to `n`
 - polynomial growth – `O(n^c)` Runtime grows quicker than previous all based on `n`
 - exponential growth – `O(c^n)` Runtime grows even faster than polynomial growth based on `n`
 - factorial growth – `O(n!)` Runtime grows the fastest and becomes quickly unusable for even
