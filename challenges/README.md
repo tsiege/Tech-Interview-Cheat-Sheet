@@ -13,7 +13,7 @@ Each language will have the following directory set up in common: (any other fil
 ```
 
 ## Languages
-  [TypeScript/JavaScript](./typescript/README.md)
+  [TypeScript/JavaScript](./typescript)
 
 ## Contributing
 The plan is to have the same challenges in multiple languages to help you expand or refresh your memory on how to use one. However, I can't do them all myself, so if you see your language is missing feel free to open a PR and contribute them. My only rules are use sensible variable names. Naming all your variables one letter isn't helping anyone, and it inhibits learning. And follow the set up for how the existing ones work.
