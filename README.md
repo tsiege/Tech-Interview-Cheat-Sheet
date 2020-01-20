@@ -5,6 +5,9 @@ This list is meant to be both a quick guide and reference for further research i
 ## Contributing
 This is an open source, community project, and I am grateful for all the help I can get. If you find a mistake make a PR and please have a source so I can confirm the correction. If you have any suggestions feel free to open an issue.
 
+## Challenges
+This project now has actual code challenges! This challenges are meant to cover the topics you'll read below. Maybe you'll see them in an interview and maybe you won't. Either way you'll probably learn something new. [Click here for more](./challenges/README.md)
+
 # Table of Content
 - [Asymptotic Notation](#asymptotic-notation)
 - [Data Structures](#data-structures)
