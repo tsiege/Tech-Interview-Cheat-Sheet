@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "allowJs": false,
+    "target": "es2017",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "declaration": true,
+    "importHelpers": true
+  },
+  "include": [
+    "challenges/*",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

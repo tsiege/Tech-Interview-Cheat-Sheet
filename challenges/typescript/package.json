@@ -1,0 +1,27 @@
+{
+  "name": "tech-interview-cheat-sheet-challenges",
+  "version": "1.0.0",
+  "description": "Various coding challenges for practice with passing examples",
+  "main": "index.js",
+  "scripts": {
+    "test": "TS_NODE_TRANSPILE_ONLY=true mocha --opts='./mocha.opts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TSiege/Tech-Interview-Cheat-Sheet.git"
+  },
+  "author": "Tristan Siegel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TSiege/Tech-Interview-Cheat-Sheet/issues"
+  },
+  "homepage": "https://github.com/TSiege/Tech-Interview-Cheat-Sheet#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.7",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "mocha": "^7.0.0",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.4"
+  }
+}
