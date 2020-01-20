@@ -4,15 +4,11 @@ import { swap, indexOfMinimum, selectionSort } from './selectionSort'
 describe('Selection Sort', () => {
   describe('swap', () => {
     it('swaps position of two items in an array given their indices', () => {
-      const arr1 = [4, 3, 2, 1]
-      const arr2 = [4, 3, 2, 1]
-      const arr3 = [4, 3, 2, 1]
-      swap(arr1, 0, 1)
-      assert.deepEqual(arr1, [3, 4, 2, 1])
-      swap(arr2, 0, 3)
-      assert.deepEqual(arr2, [1, 3, 2, 4])
-      swap(arr3, 1, 2)
-      assert.deepEqual(arr3, [4, 2, 3, 1])
+      const arr = [4, 3, 2, 1]
+      swap(arr, 0, 3)
+      assert.deepEqual(arr, [1, 3, 2, 4])
+      swap(arr, 1, 2)
+      assert.deepEqual(arr, [1, 2, 3, 4])
     })
   })
   describe('indexOfMinimum', () => {
