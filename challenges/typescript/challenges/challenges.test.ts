@@ -28,7 +28,6 @@ describe('Challenges', () => {
         assert.equal(isPrime(Math.PI), false)
       })
     })
-    // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144...
     describe('proceduralFibonacci', () => {
       it('returns the fibonacci number at that position of the sequence', () => {
         assert.equal(proceduralFibonnaci(5), 5)
