@@ -1,10 +1,51 @@
 import { assert } from 'chai'
+import { isPalindrome, isPrime, proceduralFibonnaci, recursiveFibonnaci } from './miscChallenges'
 import { swap as selectionSwap, indexOfMinimum, selectionSort } from './selectionSort'
 import { insert, insertionSort } from './insertionSort'
 import { merge, mergeSort } from './mergeSort'
 import { swap as quickSwap, partition , quickSort } from './quickSort'
 
 describe('Challenges', () => {
+  describe('Miscellaneous Challenges', () => {
+    describe('isPalindrome', () => {
+      it('knows if a string is a palindrome or not', () => {
+        assert.equal(isPalindrome('noon'), true)
+        assert.equal(isPalindrome('moon'), false)
+        assert.equal(isPalindrome('racecar'), true)
+        assert.equal(isPalindrome('never odd or even'), true)
+        assert.equal(isPalindrome('racecars'), false)
+      })
+    })
+    describe('isPrime', () => {
+      it('knows if a number is prime or not', () => {
+        assert.equal(isPrime(3), true)
+        assert.equal(isPrime(-3), false)
+        assert.equal(isPrime(10), false)
+        assert.equal(isPrime(11), true)
+        assert.equal(isPrime(51), false)
+        assert.equal(isPrime(53), true)
+        assert.equal(isPrime(7.5), false)
+        assert.equal(isPrime(Math.PI), false)
+      })
+    })
+    // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144...
+    describe('proceduralFibonacci', () => {
+      it('returns the fibonacci number at that position of the sequence', () => {
+        assert.equal(proceduralFibonnaci(5), 5)
+        assert.equal(proceduralFibonnaci(6), 8)
+        assert.equal(proceduralFibonnaci(7), 13)
+        assert.equal(proceduralFibonnaci(12), 144)
+      })
+    })
+    describe('recursiveFibonacci', () => {
+      it('returns the fibonacci number at that position of the sequence', () => {
+        assert.equal(recursiveFibonnaci(5), 5)
+        assert.equal(recursiveFibonnaci(6), 8)
+        assert.equal(recursiveFibonnaci(7), 13)
+        assert.equal(recursiveFibonnaci(12), 144)
+      })
+    })
+  })
   describe('Selection Sort', () => {
     describe('swap', () => {
       it('swaps position of two items in an array given their indices', () => {
