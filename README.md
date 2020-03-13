@@ -138,12 +138,12 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 
 #### What you need to know
 - Designed to optimize searching and sorting.
-- A **degenerate tree** is an unbalanced tree, which if entirely one-sided is a essentially a linked list.
+- A **degenerate tree** is an unbalanced tree, which if entirely one-sided, is essentially a linked list.
 - They are comparably simple to implement than other data structures.
 - Used to make **binary search trees**.
   - A binary tree that uses comparable keys to assign which direction a child is.
-  - Left child has a key smaller than it's parent node.
-  - Right child has a key greater than it's parent node.
+  - Left child has a key smaller than its parent node.
+  - Right child has a key greater than its parent node.
   - There can be no duplicate node.
   - Because of the above it is more likely to be used as a data structure than a binary tree.
 
