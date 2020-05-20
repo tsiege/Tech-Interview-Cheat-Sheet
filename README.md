@@ -321,9 +321,9 @@ This algorithm never needed to compare all the differences to one another, savin
 - Although it has an `O(n^2)`, in practice it slightly less since its comparison scheme only requires checking place if its smaller than its neighbor.
 
 #### Time Complexity
-- Best Case Sort: Merge Sort: `O(n)`
-- Average Case Sort: Merge Sort: `O(n^2)`
-- Worst Case Sort: Merge Sort: `O(n^2)`
+- Best Case: `O(n)`
+- Average Case: `O(n^2)`
+- Worst Case: `O(n^2)`
 
 #### Space Complexity
 - Worst Case: `O(n)`
