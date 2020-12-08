@@ -108,7 +108,9 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - Indexing:         Linked Lists: `O(n)`
 - Search:           Linked Lists: `O(n)`
 - Optimized Search: Linked Lists: `O(n)`
-- Insertion:        Linked Lists: `O(1)`
+- Append:           Linked Lists: `O(1)`
+- Prepend:          Linked Lists: `O(1)`
+- Insertion:        Linked Lists: `O(n)`
 
 
 ### <a id="hash"></a> Hash Table or Hash Map
