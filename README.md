@@ -298,9 +298,9 @@ This algorithm never needed to compare all the differences to one another, savin
 - Very simple to implement.
 
 #### Time Complexity
-- Best Case Sort: Merge Sort: `O(n^2)`
-- Average Case Sort: Merge Sort: `O(n^2)`
-- Worst Case Sort: Merge Sort: `O(n^2)`
+- Best Case Sort: `O(n^2)`
+- Average Case Sort: `O(n^2)`
+- Worst Case Sort: `O(n^2)`
 
 #### Space Complexity
 - Worst Case: `O(1)`
@@ -320,7 +320,7 @@ This algorithm never needed to compare all the differences to one another, savin
 
 #### What you need to know
 - Inefficient for large data sets, but can be faster for than other algorithms for small ones.
-- Although it has an `O(n^2)`, in practice it slightly less since its comparison scheme only requires checking place if its smaller than its neighbor.
+- Although it has an `O(n^2)` time complexity, in practice it is slightly less since its comparison scheme only requires checking place if it is smaller than its neighbor.
 
 #### Time Complexity
 - Best Case: `O(n)`
