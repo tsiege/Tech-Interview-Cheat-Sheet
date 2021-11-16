@@ -308,7 +308,7 @@ This algorithm never needed to compare all the differences to one another, savin
 #### Visualization
 ![#](https://upload.wikimedia.org/wikipedia/commons/9/94/Selection-Sort-Animation.gif)
 
-[(source: Wikipedia, _Insertion Sort_)](https://en.wikipedia.org/wiki/Selection_sort)
+[(source: Wikipedia, _Selection Sort_)](https://en.wikipedia.org/wiki/Selection_sort)
 
 ### <a id="insertion-sort"></a>Insertion Sort
 #### Definition
