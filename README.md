@@ -54,23 +54,23 @@ Visualized below; the x-axis representing input size and the y-axis representing
 #### Big-O notation
 Big-O refers to the upper bound of time or space complexity of an algorithm, meaning it worst case runtime scenario. An easy way to think of it is that runtime could be better than Big-O but it will never be worse.
 #### Big-Ω (Big-Omega) notation
-Big-Omega refers to the lower bound of time or space complexity of an algorithm, meaning it is the best runtime scenario. Or runtime could worse than Big-Omega, but it will never be better.
+Big-Omega refers to the lower bound of time or space complexity of an algorithm, meaning it is the best runtime scenario. Or runtime could be worse than Big-Omega, but it will never be better.
 #### Big-θ (Big-Theta) notation
 Big-Theta refers to the tight bound of time or space complexity of an algorithm. Another way to think of it is the intersection of Big-O and Big-Omega, or more simply runtime is guaranteed to be a given complexity, such as `n log n`.
 
 #### What you need to know
 - Big-O and Big-Theta are the most common and helpful notations
 - Big-O does _not_ mean Worst Case Scenario, Big-Theta does _not_ mean average case, and Big-Omega does _not_ mean Best Case Scenario. They only connote the algorithm's performance for a particular scenario, and all three can be used for any scenario.
-- Worst Case means given an unideal input, Average Case means given a typical input, Best case means a ideal input. Ex. Worst case means given an input the algorithm performs particularly bad, or best case an already sorted array for a sorting algorithm.
+- Worst Case means given an unideal input, Average Case means given a typical input, Best case means an ideal input. e.g. Worst case means given an input the algorithm performs particularly bad, or best case an already sorted array for a sorting algorithm.
 - Best Case and Big Omega are generally not helpful since Best Cases are rare in the real world and lower bound might be very different than an upper bound.
 - Big-O isn't everything. On paper merge sort is faster than quick sort, but in practice quick sort is superior.
 
 # <a id="data-structures"></a>Data Structures
 ### <a id="array"></a> Array
 #### Definition
-- Stores data elements based on an sequential, most commonly 0 based, index.
+- Stores data elements based on a sequential, most commonly 0 based, index.
 - Based on [tuples](http://en.wikipedia.org/wiki/Tuple) from set theory.
-- They are one of the oldest, most commonly used data structures.
+- It is one of the oldest, most commonly used data structures.
 
 #### What you need to know
 - Optimal for indexing; bad at searching, inserting, and deleting (except at the end).
@@ -386,7 +386,7 @@ This algorithm never needed to compare all the differences to one another, savin
 
 #### Merge Sort Vs. Quicksort
 - Quicksort is likely faster in practice, but merge sort is faster on paper.
-- Merge Sort divides the set into the smallest possible groups immediately then reconstructs the incrementally as it sorts the groupings.
+- Merge Sort divides the set into the smallest possible groups immediately then reconstructs them incrementally as it sorts the groupings.
 - Quicksort continually partitions the data set by a pivot, until the set is recursively sorted.
 
 ## <a id="additional-resources"></a>Additional Resources
