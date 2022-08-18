@@ -138,6 +138,8 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
 - Is a tree like data structure where every node has at most two children.
   - There is one left and right child node.
 
+For a full binary-tree reference see [Here](https://www.scaler.com/topics/data-structures/binary-tree-in-data-structure/)
+
 #### What you need to know
 - Designed to optimize searching and sorting.
 - A **degenerate tree** is an unbalanced tree, which if entirely one-sided, is essentially a linked list.
