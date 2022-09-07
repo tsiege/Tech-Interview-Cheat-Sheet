@@ -102,7 +102,7 @@ Big-Theta refers to the tight bound of time or space complexity of an algorithm.
   - Made with a linked list by having the head be the only place for insertion and removal.
 - **Queues**, too can be implemented with a linked list or an array.
   - Queues are a **first in, first out** (FIFO) data structure.
-  - Made with a doubly linked list that only removes from head and adds to tail.
+  - Made with a linked list that only removes from head and adds to tail.
 
 #### Time Complexity
 - Indexing:         Linked Lists: `O(n)`
